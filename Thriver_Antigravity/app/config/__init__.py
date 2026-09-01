@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     PROJECT_SHORT_NAME: str = "RiskIQX"
     API_V1_STR: str = "/api/v1"
     
-    DATABASE_URL: str = "sqlite:///./riskiqx.db"
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:////tmp/riskiqx.db" if os.getenv("VERCEL") else "sqlite:///./riskiqx.db")
     
     # Default Scoring Weights (Must sum to 1.0)
     DEFAULT_WEIGHT_SEVERITY: float = 0.25

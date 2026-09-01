@@ -1,9 +1,10 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/api/(.*)", "destination": "/api/index.py" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "env": {
     "DATABASE_URL": "sqlite:////tmp/riskiqx.db"
   }
 }
+
